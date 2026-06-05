@@ -11,6 +11,11 @@ Python data analysis project which predicts match outcomes using 2025 Men's VNL 
 ## How to run
 Installing dependices: pip3 install pandas plotly scikit-learn fastapi uvicorn
 
+## API Endpoints
+- GET /teams — returns all 18 VNL teams
+- GET /predict?home=X&away=Y — predicts match winner with confidence score
+- GET /history — returns all past predictions with timestamps
+
 ## Charts
 <img width="1444" height="692" alt="image" src="https://github.com/user-attachments/assets/67600111-e4ac-450b-bc63-8bc7c820ac79" />
 
