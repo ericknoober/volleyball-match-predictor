@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd 
 import pickle
+from database import save_prediction, get_predictions
 
 app = FastAPI()
 
@@ -31,12 +32,14 @@ team_stats=(home_stats + away_stats)/2
 #list of all teams
 teams= sorted(matches["Home Team"].unique().tolist())
 
-#/teams and /predict are endpoints to get information called upon
 
+#teams endpoint that gathers all the teams
 @app.get("/teams")
 def get_teams():
     return {"teams" : teams}
 
+#prediction endpoint that gathers two teams' data
+# and creates a confidence level
 @app.get("/predict")
 def predict(home: str, away: str):
     #average stats for each team
@@ -69,6 +72,9 @@ def predict(home: str, away: str):
     #higher chance of winning
     confidence = round(max(probability) * 100, 1)
 
+    #save prediction to database
+    save_prediction(home, away, winner, f"{confidence}%")
+
     return{
         "home": home,
         "away": away,
@@ -76,5 +82,23 @@ def predict(home: str, away: str):
         "confidence": f"{confidence}%"
     }
     
-
-
+#history endpoint that gathers the previous predictions
+#to be viewed
+@app.get("/history")
+def get_history():
+    rows = get_predictions()
+    #creates empty list
+    predictions = []
+    
+    #create rows
+    for row in rows:
+        predictions.append({
+            "id": row[0],
+            "home_team": row[1],
+            "away_team": row[2],
+            "predicted_winner": row[3],
+            "confidence": row[4],
+            "timestamp": row[5]
+        })
+    
+    return {"predictions": predictions}
