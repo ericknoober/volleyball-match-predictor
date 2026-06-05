@@ -6,7 +6,10 @@ Python data analysis project which predicts match outcomes using 2025 Men's VNL 
 - Away team tends to win 63% of VNL matches, could mean that home court advantage is nonexistent or error with data
 - Initally used home win data only for correlation of wins and stats, but analyzing all teams revelaed aces are a strong predictor of winning
 - Using a logisitc regression model to train data, achieving a accuracy score of 87.5% which predicts outcome based on the stats of the match (does not tell us much, but will build a model that predicts outcomes using pre-match averages
+- pre-match prediction model gives confidences levels of 52%-54%; suggests raw averages is insufficent data
 
+## How to run
+Installing dependices: pip3 install pandas plotly scikit-learn fastapi uvicorn
 
 ## Charts
 <img width="1444" height="692" alt="image" src="https://github.com/user-attachments/assets/67600111-e4ac-450b-bc63-8bc7c820ac79" />
