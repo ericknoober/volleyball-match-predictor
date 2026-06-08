@@ -3,9 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>VNL 2025 Match Predictor</title>
 </head>
 <body>
+
+    <div class=""container>
+
+        <h1> VNL 2025 Martch Predictor</h1>
+        <p class="subtitle">Select two teams to predict the match outcome</p>>
+
+        <!-- Team selecter for home and away teams -->
+        <div class="selector">
+
+             <!-- Home team -->
+            <div class="team-select">
+                <label>Home Team</label>
+                <select id ="home-team">
+                    <option value = ""> Select team... </option>
+                </select>
+            </div>
+
+            <div class ="vs">VS</div>
+
+            <!-- Away team -->
+            <div class="team-select"> 
+                <label>Away team</label>
+                <select id="away-team">
+                    <option value=""> Select team... </option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Prediction button to run calculations -->
+        <button id="predict btn" onclick="predict()">Predict Winner</button>
+
+        <!-- hidden results, appears only when calculations are run -->
+        <div id="result" class="result hidden">
+
+            <!-- Prediction results -->
+            <h2>Predicted Winner</h2>
+            <div id="winner" class="winner"></div>
+            <div id="confidence" class="confidence"></div>
+        </div>
+
+        <!-- Table history from database -->
+        <div id="history" class="history">
+            <h2>Past Predictions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Home</th>
+                        <th>Away</th>
+                        <th>Predicted Winner</th>
+                        <th>Confidence</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- imports -->
+     <script src="script.js"></script>
     
 </body>
 </html>
