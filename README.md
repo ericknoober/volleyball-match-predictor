@@ -22,3 +22,7 @@ Installing dependices: pip3 install pandas plotly scikit-learn fastapi uvicorn
 <img width="1455" height="713" alt="image" src="https://github.com/user-attachments/assets/a6de0352-c0b6-40f1-82fc-b1814e8fad9e" />
 
 <img width="1444" height="711" alt="image" src="https://github.com/user-attachments/assets/09fdfe7c-5874-48df-b6a2-be48262a045d" />
+
+frontend sample
+<img width="974" height="554" alt="image" src="https://github.com/user-attachments/assets/e04b8db6-b907-4081-befd-257a990a067b" />
+
