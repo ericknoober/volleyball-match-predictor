@@ -2,6 +2,11 @@
 
 Python data analysis project which predicts match outcomes using 2025 Men's VNL data. Built using panadas, plotly, and streamlit.
 
+## Features
+- Select two 2025 VNL men's teams
+- Confidence score calculated using season average stats
+- Prediction history saved to SQLite database
+
 ## Current Findings
 - Away team tends to win 63% of VNL matches, could mean that home court advantage is nonexistent or error with data
 - Initally used home win data only for correlation of wins and stats, but analyzing all teams revelaed aces are a strong predictor of winning
