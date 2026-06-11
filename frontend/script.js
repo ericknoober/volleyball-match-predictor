@@ -1,3 +1,5 @@
+//async and await functions use to run data in the background
+
 const API = "http://localhost:8000"
 
 // load teams into dropdowns
@@ -68,6 +70,73 @@ async function loadHistory(){
     })
 }
 
+function loadCharts(){
+    //correlation chart
+    const corrData = [{
+        //hard coded data
+        x:["Aces", "Blocks", "Kills"],
+        y:[0.353, 0.210, 0.166],
+        type: "bar",
+        marker: {
+            color: ["#000000", "#000000", "#000000"],
+            opacity: 0.8
+        }
+    }]
+
+    Plotly.newPlot("chart-correlation", corrData, {
+        paper_bgcolor: "#1a1a2e",
+        plot_bgcolor: "#1a1a2e",
+        font: { color: "#ffffff" },
+        margin: { t: 20 },
+        yaxis: { title: "Correlation with Winning" }
+    })
+
+    // Chart 2 - home vs away
+    const homeAwayData = [{
+        x: ["Home", "Away"],
+        y: [37.1, 62.9],
+        type: "bar",
+        marker: {
+            color: ["#4facfe", "#00f2fe"],
+            opacity: 0.8
+        },
+        text: ["37.1%", "62.9%"],
+        textposition: "outside"
+    }]
+
+    Plotly.newPlot("chart-homeaway", homeAwayData, {
+        paper_bgcolor: "#1a1a2e",
+        plot_bgcolor: "#1a1a2e",
+        font: { color: "#ffffff" },
+        margin: { t: 20 },
+        yaxis: { title: "Win Rate %", range: [0, 100] }
+    })
+
+    // Chart 3 - team wins
+    const teamData = [{
+        x: ["Brazil", "Bulgaria", "Ukraine", "Germany", "Poland", 
+            "Italy", "China", "Serbia", "Argentina", "France",
+            "Cuba", "Iran", "Japan", "Netherlands", "Slovenia",
+            "Türkiye", "USA", "Canada"],
+        y: [8, 5, 4, 4, 4, 3, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        type: "bar",
+        marker: {
+            color: "#4facfe",
+            opacity: 0.8
+        }
+    }]
+
+    Plotly.newPlot("chart-teams", teamData, {
+        paper_bgcolor: "#1a1a2e",
+        plot_bgcolor: "#1a1a2e",
+        font: { color: "#ffffff" },
+        margin: { t: 20 },
+        xaxis: { tickangle: -45 },
+        yaxis: { title: "Home Wins" }
+    })
+}
+
 //run page
 loadTeams()
 loadHistory()
+loadCharts()
