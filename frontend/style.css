@@ -152,11 +152,36 @@ th{
 
 td{
     padding: 12px 10pxo;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #ffffff;
     font-size: 0.95rem;
 }
 
 /* last row only */
 tr:last-child td{
     border-bottom: none;
+}
+
+.charts{
+    margin-top: 40px;
+}
+
+.charts h2{
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.chart-card{
+    background: #000000;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.chart-card h3{
+    color:#ffffff;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
