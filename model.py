@@ -43,7 +43,7 @@ print(f"Model accuracy:  {accuracy * 100:.1f}%")
 
 #save model
 #uses pickle to convert model to binary file
-with open("model.pk1", "wb") as f:
+with open("backend/model.pk1", "wb") as f:
         pickle.dump(model, f)
 
     
