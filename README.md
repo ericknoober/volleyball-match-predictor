@@ -15,6 +15,8 @@ Python data analysis project which predicts match outcomes using 2025 Men's VNL 
 
 ## How to run
 Installing dependices: pip3 install pandas plotly scikit-learn fastapi uvicorn
+Run this in terminal: uvicorn main:app --reload
+Open index.html
 
 ## API Endpoints
 - GET /teams — returns all 18 VNL teams
